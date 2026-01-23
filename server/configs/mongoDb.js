@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(`${process.env.MONGODB_URI}/PixInfinity`);
+    await mongoose.connect(`${process.env.MONGODB_URI}/ImageEditor`);
 
     console.log("Database connected successfully");
   } catch (err) {
