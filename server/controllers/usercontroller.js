@@ -1,43 +1,27 @@
-import { Webhook } from 'svix'
+import {Webhook} from 'svix'
 import userModel from '../models/usermodel.js'
 
 // htps://localhost:/4000/api/user/webhooks
 
-const clerkWebhooks = async (req, res) => {
+const clerkWebhooks=async(req,res)=>{
     try {
-        const whOok = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
+        const whOok=new Webhook(process.env.CLERK_WEBHOOK_SECRET)
 
-        // await whOok.verify(JSON.stringify(req.body),{
-        //     "svix-id":req.headers['svix-id'],
-        //     "svix-timestamp":req.headers['svix-timestamp'],
-        //     "svix-signature":req.headers['svix-signature']
-        // })
-        // const{data,type}=req.body
+        await whOok.verify(JSON.stringify(req.body),{
+            "svix-id":req.headers['svix-id'],
+            "svix-timestamp":req.headers['svix-timestamp'],
+            "svix-signature":req.headers['svix-signature']
+        })
+        const{data,type}=req.body
 
-        // 1. Raw body ko string me lo
-        const payload = req.body.toString();
-
-        // 2. Verify karo
-        await whOok.verify(payload, {
-            "svix-id": req.headers['svix-id'],
-            "svix-timestamp": req.headers['svix-timestamp'],
-            "svix-signature": req.headers['svix-signature']
-        });
-
-        // 3. Parse payload
-        const { data, type } = JSON.parse(payload);
-
-
-
-        
-        switch (type) {
-            case "user.created": {
-                const userData = {
-                    clerkId: data.id,
-                    email: data.email_addresses[0].email_address,
-                    firstName: data.first_name,
-                    lastName: data.last_name,
-                    photo: data.image_url
+        switch(type){
+            case "user.created":{
+                const userData={
+                    clerkId:data.id,
+                    email:data.email_addresses[0].email_address,
+                    firstName:data.first_name,
+                    lastName:data.last_name,
+                    photo:data.image_url
                 }
 
                 await userModel.create(userData)
@@ -45,33 +29,33 @@ const clerkWebhooks = async (req, res) => {
 
                 break;
             }
-            case "user.updated": {
+            case "user.updated":{
 
-                const userData = {
-                    email: data.email_addresses[0].email_address,
-                    firstName: data.first_name,
-                    lastName: data.last_name,
-                    photo: data.image_url
+                const userData={
+                    email:data.email_addresses[0].email_address,
+                    firstName:data.first_name,
+                    lastName:data.last_name,
+                    photo:data.image_url
                 }
 
-                await userModel.findOneAndUpdate({ clerkId: data.id }, userData)
+                await userModel.findOneAndUpdate({clerkId:data.id},userData)
                 res.json({})
 
                 break;
             }
-            case "user.deleted": {
+            case "user.deleted":{
 
-                await userModel.findOneAndDelete({ clerkId: data.id })
+                await userModel.findOneAndDelete({clerkId:data.id})
                 res.json({})
                 break;
             }
             default:
                 break;
         }
-
+        
     } catch (error) {
         console.log(error.message);
-        res.json({ success: false, message: error.message })
+        res.json({success:false,message:error.message})
     }
 }
 
@@ -90,10 +74,10 @@ const clerkWebhooks = async (req, res) => {
 //     } catch (error) {
 //         console.log(error.message);
 //         res.json({success:false,message:error.message})
-
+        
 //     }
 // }
 
 
-export { clerkWebhooks };
+export {clerkWebhooks};
 
