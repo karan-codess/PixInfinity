@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-html {
-  scroll-behavior: smooth;
-}
-
-.bg-layer {
-  background-image: url("/bg_layer.png");
-}
