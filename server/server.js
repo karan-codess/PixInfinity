@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import connectMongoDB from './configs/mongoDb.js';
 import userRouter from './routes/userRoutes.js';
+import imageRouter from './routes/imageRoutes.js';
 
 
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.get('/',(req,res)=>res.send("api working"));
 app.use('/api/user',userRouter)
+app.use('/api/image',imageRouter)
 
 
 app.listen(PORT, () => console.log("server running on port " + PORT));
