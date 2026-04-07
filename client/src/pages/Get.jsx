@@ -1,26 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import upload from "../assets/upload.svg";
 
 const Get = () => {
-  const location = useLocation();
-  const path = location.pathname;
-
-  const titleMap = {
-    bgremover: "Remove Background",
-    upscale: "Image Upscaling",
-    "text-to-image": "Text to Image",
-    "remove-text": "Remove the Text",
-    cleanup: "CleanUp",
-    uncrop: "UnCrop",
-  };
-
-  const slug = path.split("/").pop();
-  const title = titleMap[slug] || "Service";
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col items-center px-4 md:px-16 pt-40">
-      <h1 className="text-black text-4xl text-center font-bold md:text-6xl leading-snug mb-2 max-w-7xl">{`Upload the image for ${title}`}</h1>
+      <h1 className="text-black text-4xl text-center font-bold md:text-6xl leading-snug mb-2 max-w-7xl">
+        Upload the image
+      </h1>
       <div className="max-w-4xl w-full bg-white mx-auto mt-12 p-4 rounded-2xl">
         <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-black transition">
           <input
@@ -28,7 +17,12 @@ const Get = () => {
             accept="image/*"
             id="imageUpload"
             className="hidden"
-            onChange={(e) => console.log(e.target.files[0])}
+            onChange={(e) => {
+              const file = e.target.files[0];
+              if (file) {
+                navigate("/services", { state: { image: file } });
+              }
+            }}
           />
 
           <label htmlFor="imageUpload" className="cursor-pointer">

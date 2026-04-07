@@ -39,7 +39,7 @@ const Header = () => {
             <i className="ri-copper-coin-line text-lg"></i>
           </button> */}
           <Link
-            to="/services"
+            to="/get"
             className="flex items-center gap-2 mt-14 bg-white text-black px-6 py-3 rounded-xl text-lg font-medium hover:bg-gray-200 transition duration-300 ease-in-out">
             Try It Now
             <i className="ri-arrow-right-long-line text-lg"></i>
