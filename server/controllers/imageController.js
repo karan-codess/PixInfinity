@@ -1,7 +1,7 @@
 import axios from "axios";
 import fs from "fs";
 import formData from "form-data";
-import userModel from "../models/userModel.js";
+import userModel from "../models/usermodel.js";
 
 const removeBgImage = async (req, res) => {
   try {
