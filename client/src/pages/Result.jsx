@@ -7,7 +7,7 @@ const Result = () => {
   return (
     <div>
       <Final />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

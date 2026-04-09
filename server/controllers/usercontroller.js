@@ -64,7 +64,7 @@ const clerkWebhooks=async(req,res)=>{
 
 const userCredits =async (req,res)=>{
     try {
-        const {clerkId}=req.body;
+        const {clerkId}=req.user;
         const userData=await userModel.findOne({clerkId});
         res.json({success:true,credits:userData.creditBalance});
     } catch (error) {

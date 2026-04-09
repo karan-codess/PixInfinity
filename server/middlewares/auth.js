@@ -9,7 +9,7 @@ const authUser = async (req, res, next) => {
     }
 
     const token_decode = jwt.decode(token);
-    req.body = { clerkId: token_decode.sub };
+    req.user = { clerkId: token_decode.sub }; // ✅ was req.body, now req.user
 
     next();
 
