@@ -1,10 +1,12 @@
 import React, { use, useContext } from "react";
 import img from "../assets/what.avif";
 import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const Final = () => {
 
     const {resultImage,image}= useContext(AppContext);
+    const navigate = useNavigate();
 
   return (
     <div className="flex flex-col items-center px-4 md:px-16 py-40 max-w-7xl mx-auto">
@@ -28,7 +30,7 @@ const Final = () => {
           </div>
         </div>
         {resultImage && <div className="flex sm:justify-end items-center gap-4 mt-6 flex-wrap justify-center">
-          <button className="flex items- border-2 gap-2 bg-gray-300 text-black px-4 py-2 rounded-xl text-lg font-medium hover:bg-gray-200 transition duration-300 ease-in-out hover:scale-105">
+          <button onClick={()=>navigate("/")} className="flex items- border-2 gap-2 bg-gray-300 text-black px-4 py-2 rounded-xl text-lg font-medium hover:bg-gray-200 transition duration-300 ease-in-out hover:scale-105">
             Try another image
           </button>
           <a href={resultImage} download

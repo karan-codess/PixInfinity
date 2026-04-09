@@ -15,7 +15,7 @@ const Home = () => {
         <Video />
         <Describe />
         <Features />
-        {/* <Subscription /> */}
+        <Subscription />
         <Testimonial />
         <Faqs />
         <Footer />

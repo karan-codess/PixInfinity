@@ -43,7 +43,7 @@ const prices = [
 
 const Subscription = () => {
   return (
-    <div className="flex flex-col items-center px-4 md:px-16 py-32">
+    <div className="flex flex-col items-center px-4 md:px-16 py-28">
       <h1 className="text-black text-4xl text-center font-bold md:text-6xl leading-snug mb-2 max-w-5xl">
         Boost Your Creativity
       </h1>

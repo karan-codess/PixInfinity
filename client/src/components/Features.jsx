@@ -36,7 +36,7 @@ const features = [
 
 const Features = () => {
   return (
-    <div id="features" className="flex flex-col items-center px-4 md:px-16 py-20">
+    <div id="features" className="flex flex-col items-center px-4 md:px-16 pt-20">
       <h1 className="text-black text-4xl text-center font-bold md:text-6xl leading-snug mb-2 max-w-3xl">
         Features of PixInfinity
       </h1>
