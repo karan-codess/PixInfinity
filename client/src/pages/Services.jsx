@@ -7,7 +7,6 @@ const Services = () => {
   return (
     <div>
         <All />
-        {/* <Footer /> */}
     </div>
   )
 }

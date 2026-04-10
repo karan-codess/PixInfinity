@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import BuyCredit from "./pages/BuyCredit";
 import Result from "./pages/Result";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
 import Services from "./pages/Services";
 import Get from "./pages/Get";
 import Login from "./pages/Login";
@@ -23,7 +22,6 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/buy" element={<BuyCredit />} />
         <Route path="/result" element={<Result />} />
-        <Route path="/about" element={<About />} />
         <Route path="/get" element={<Get />} />
         <Route path="/services" element={<Services />} />
         <Route path="/sign-in" element={<Login />} />

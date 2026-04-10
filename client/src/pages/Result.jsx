@@ -7,7 +7,6 @@ const Result = () => {
   return (
     <div>
       <Final />
-      {/* <Footer /> */}
     </div>
   );
 };

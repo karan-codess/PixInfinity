@@ -38,7 +38,8 @@ const wwp = [
 ];
 
 const All = () => {
-  const {removeBg}=useContext(AppContext)
+  const {removeBg ,upscaleImg,removeTextImg,uncropImg,cleanupImg}=useContext(AppContext)
+
 
   const location = useLocation();
   const image = location.state?.image;
@@ -55,20 +56,20 @@ const All = () => {
     }
 
     if (action === "upscale") {
-      upscale(image);
+      upscaleImg(image);
     }
 
     if (action === "textToImage") {
       textToImage(image);
     }
     if (action === "removeText") {
-      removeText(image);
+      removeTextImg(image);
     }
     if (action === "cleanup") {
-      cleanup(image);
+      cleanupImg(image);
     }
     if (action === "uncrop") {
-      uncrop(image);
+      uncropImg(image);
     }
 
   };
