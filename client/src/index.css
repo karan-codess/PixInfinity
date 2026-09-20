@@ -3,7 +3,35 @@
 html {
   scroll-behavior: smooth;
 }
-
+/* 
 .bg-layer {
   background-image: url("/bg_layer.png");
+} */
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: testimonial-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-group {
+  display: flex;
+  gap: 20px;
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+@keyframes testimonial-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
 }

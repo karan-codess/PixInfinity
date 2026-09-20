@@ -4,102 +4,297 @@ import pic from "../assets/third.svg";
 const prices = [
   {
     amount: "$9.99",
+    period: "/ one-time",
     plan: "Basic",
     originalAmount: "$19.99",
     title: "Basic Plan",
     pic: pic,
-    features: ["guarantee token", "basic features", "standard support"],
+    features: [
+      "Guaranteed credits",
+      "AI image editing",
+      "Background removal",
+      "Standard support",
+    ],
     ready: "Ready to use",
-    desc: "Ideal for casual users who wants to explore AI creativity.",
+    desc: "Perfect for users who want to explore AI-powered image editing.",
+    popular: true,
   },
 
   {
     amount: "$9.99",
-    plan: "month",
+    period: "/ month",
+    plan: "Monthly",
     originalAmount: "$19.99",
     title: "Monthly Plan",
     pic: pic,
-    features: ["guarantee token", "basic features", "standard support"],
+    features: [
+      "Monthly credits",
+      "All AI tools",
+      "Image upscaling",
+      "Priority processing",
+    ],
     ready: "Coming Soon",
-    desc: "Ideal for casual users.",
+    desc: "A flexible plan for regular image editing and creative work.",
+    popular: false,
   },
+
   {
     amount: "$9.99",
-    plan: "annual",
+    period: "/ year",
+    plan: "Annual",
     originalAmount: "$19.99",
     title: "Annual Plan",
     pic: pic,
     features: [
-      "guarantee token",
-      "basic features",
-      "standard support",
-      "exclusive deals",
-      "priority support",
+      "Annual credits",
+      "All AI tools",
+      "Exclusive deals",
+      "Priority support",
+      "Early access",
     ],
     ready: "Coming Soon",
-    desc: "Ideal for casual users.",
+    desc: "For creators who want the complete Revoo experience.",
+    popular: false,
   },
 ];
 
 const Subscription = () => {
   return (
-    <div className="flex flex-col items-center px-4 md:px-16 py-28">
-      <h1 className="text-black text-4xl text-center font-bold md:text-6xl leading-snug mb-2 max-w-5xl">
-        Boost Your Creativity
-      </h1>
-      <p className="text-gray-800 text-center mt-5 text-lg md:text-xl max-w-3xl italic">
-        Unlock the ultimate toolkit for image perfection.
-      </p>
-      <div className="py-24 p-4 max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-13">
+    <section
+      id="pricing"
+      className="px-5 md:px-10 lg:px-16 pt-20 md:pt-24 pb-16"
+    >
+      {/* ================= HEADING ================= */}
+      <div className="flex flex-col items-center text-center">
+
+        {/* Badge */}
+        <div className="inline-flex items-center border border-gray-300 bg-white px-3 py-1 mb-5">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[1.5px] font-semibold text-gray-600">
+            Simple Pricing
+          </span>
+        </div>
+
+        {/* Heading */}
+        <h2
+          className="
+            text-black
+            uppercase
+            font-black
+            tracking-[-2px]
+            leading-[0.9]
+            text-[48px]
+            sm:text-[58px]
+            md:text-[68px]
+            lg:text-[78px]
+            max-w-4xl
+          "
+          style={{
+            fontFamily:
+              "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+          }}
+        >
+          Boost Your
+          <br />
+          Creativity.
+        </h2>
+
+        {/* Description */}
+        <p
+          className="
+            text-gray-700
+            text-sm
+            md:text-base
+            lg:text-lg
+            font-medium
+            max-w-[600px]
+            mt-6
+            leading-tight
+          "
+        >
+          Unlock the ultimate toolkit for image perfection with simple,
+          flexible plans built for every creator.
+        </p>
+      </div>
+
+
+      {/* ================= PRICING CARDS ================= */}
+      <div className="max-w-6xl mx-auto mt-16 md:mt-20">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
           {prices.map((item, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl border-4 hover:shadow-lg transition duration-300 h-[60vh] flex flex-col"
+              className={`
+                relative
+                group
+                bg-[#f7f7f5]
+                border
+                border-black
+                rounded-[20px]
+                p-6
+                md:p-7
+                min-h-[490px]
+                flex
+                flex-col
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-white
+                ${item.popular ? "ring-1 ring-black" : ""}
+              `}
             >
-              <div className="flex justify-between gap-20">
-                <h3 className="text-black self-center font-bold text-4xl">
-                  {item.amount}
-                </h3>
-                <p className="px-3 py-0.5 border rounded text-sm flex self-start ">
-                  {item.plan}
-                </p>
-              </div>
-              <p className="text-gray-500 text-sm mt-3">
-                Original Price:{" "}
-              <span className="line-through text-gray-400">{item.originalAmount}</span>
-                
-              </p>
-              <h4 className="text-black text-lg font-semibold mt-3 ">
-                {item.title}
-              </h4>
-              <p className="text-gray-500 text-xs mt-3">{item.desc}</p>
-              <div className="flex flex-col gap-4 mt-6">
-                {item.features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <img
-                      src={item.pic}
-                      className="w-5 h-5 bg-gray-300 rounded-full p-1"
-                      alt=""
-                    />
-                    <span className="text-sm text-gray-900">{feature}</span>
+
+              {/* Popular Badge */}
+              {item.popular && (
+                <div className="absolute -top-3 left-6 bg-black text-white px-3 py-1 rounded-full">
+                  <span className="text-[9px] uppercase tracking-widest font-semibold">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+
+              {/* Top Section */}
+              <div className="flex items-start justify-between gap-4">
+
+                <div>
+                  <div className="flex items-end gap-1">
+
+                    <h3 className="text-black text-4xl md:text-5xl font-black tracking-tight">
+                      {item.amount}
+                    </h3>
+
+                    <span className="text-gray-500 text-xs mb-2">
+                      {item.period}
+                    </span>
+
                   </div>
-                ))}
+
+                  <p className="text-gray-500 text-xs mt-2">
+                    Original price{" "}
+                    <span className="line-through">
+                      {item.originalAmount}
+                    </span>
+                  </p>
+                </div>
+
+
+                {/* Plan */}
+                <span className="border border-gray-400 bg-white px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold">
+                  {item.plan}
+                </span>
+
               </div>
-              <div className="mt-auto text-right">
-                <p className={`text-xs text-gray-500 inline-block border border-dashed px-1 py-0.5 rounded ${item.ready === "Coming Soon" ? 'text-red-600 border-red-400 bg-red-50' : 'text-green-600 border-green-400 bg-green-50'}`}>
-                  {item.ready}
+
+
+              {/* Divider */}
+              <div className="border-t border-gray-300 my-6"></div>
+
+
+              {/* Title + Description */}
+              <div>
+
+                <h4 className="text-black text-xl font-bold tracking-tight">
+                  {item.title}
+                </h4>
+
+                <p className="text-gray-600 text-sm leading-relaxed mt-2">
+                  {item.desc}
                 </p>
 
-                <button className="w-full py-3 rounded-lg bg-black text-white font-semibold text-sm hover:bg-gray-800 transition">
-                  Get Started
-                </button>
               </div>
+
+
+              {/* Features */}
+              <div className="flex flex-col gap-3 mt-6">
+
+                {item.features.map((feature, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3"
+                  >
+
+                    <div className="w-6 h-6 rounded-full bg-white border border-gray-300 flex items-center justify-center shrink-0">
+                      <img
+                        src={item.pic}
+                        className="w-3 h-3 object-contain"
+                        alt=""
+                      />
+                    </div>
+
+                    <span className="text-sm text-gray-800">
+                      {feature}
+                    </span>
+
+                  </div>
+                ))}
+
+              </div>
+
+
+              {/* Bottom */}
+              <div className="mt-auto pt-7">
+
+                {/* Status */}
+                <div className="flex justify-between items-center mb-3">
+
+                  <span className="text-[10px] uppercase tracking-wider text-gray-400">
+                    Availability
+                  </span>
+
+                  <span
+                    className={`
+                      text-[10px]
+                      font-semibold
+                      border
+                      border-dashed
+                      px-2
+                      py-1
+                      rounded
+                      ${
+                        item.ready === "Coming Soon"
+                          ? "text-gray-500 border-gray-400 bg-white"
+                          : "text-green-700 border-green-400 bg-green-50"
+                      }
+                    `}
+                  >
+                    {item.ready}
+                  </span>
+
+                </div>
+
+
+                {/* Button */}
+                <button
+                  disabled={item.ready === "Coming Soon"}
+                  className={`
+                    w-full
+                    py-3
+                    rounded-md
+                    text-sm
+                    font-semibold
+                    transition
+                    ${
+                      item.ready === "Coming Soon"
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-black text-white hover:bg-gray-800"
+                    }
+                  `}
+                >
+                  {item.ready === "Coming Soon"
+                    ? "Coming Soon"
+                    : "Get Started →"}
+                </button>
+
+              </div>
+
             </div>
           ))}
+
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
