@@ -9,7 +9,7 @@ import imageRouter from './routes/imageRoutes.js';
 
 const PORT=process.env.PORT||4000;
 const app=express();
-await connectMongoDB();
+// await connectMongoDB();
 
 
 app.use(cors());
@@ -21,3 +21,6 @@ app.use('/api/image',imageRouter)
 
 
 app.listen(PORT, () => console.log("server running on port " + PORT));
+connectMongoDB().catch(err => {
+  console.error("MongoDB connection failed:", err.message);
+});
