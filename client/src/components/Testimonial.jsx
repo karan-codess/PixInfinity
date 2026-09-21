@@ -13,14 +13,14 @@ const testimonials = [
     role: "Creator",
     image: u1,
     rating: 5,
-    text: "Revoo has made my image editing workflow incredibly simple. The AI tools are fast and the results are impressive.",
+    text: "Pix has made my image editing workflow incredibly simple. The AI tools are fast and the results are impressive.",
   },
   {
     name: "Jane Smith",
     role: "Designer",
     image: u2,
     rating: 4,
-    text: "I love how easy it is to remove backgrounds and clean up images. Revoo saves me a lot of time every day.",
+    text: "I love how easy it is to remove backgrounds and clean up images. Pix saves me a lot of time every day.",
   },
   {
     name: "Mike Johnson",
@@ -34,21 +34,21 @@ const testimonials = [
     role: "Photographer",
     image: u4,
     rating: 5,
-    text: "Revoo makes professional image editing feel effortless. I can prepare my photos much faster than before.",
+    text: "Pix makes professional image editing feel effortless. I can prepare my photos much faster than before.",
   },
   {
     name: "Sarah Wilson",
     role: "UI Designer",
     image: u5,
     rating: 5,
-    text: "The clean interface and AI-powered tools make Revoo really enjoyable to use. Background removal works beautifully.",
+    text: "The clean interface and AI-powered tools make Pix really enjoyable to use. Background removal works beautifully.",
   },
   {
     name: "David Brown",
     role: "Digital Artist",
     image: u1,
     rating: 4,
-    text: "From quick edits to creative experiments, Revoo gives me everything I need in one place without making things complicated.",
+    text: "From quick edits to creative experiments, Pix gives me everything I need in one place without making things complicated.",
   },
 ];
 
@@ -184,7 +184,7 @@ const Testimonial = () => {
             leading-tight
           "
         >
-          See how creators are using Revoo to make their image
+          See how creators are using Pix to make their image
           editing workflow faster, simpler, and better.
         </p>
       </div>

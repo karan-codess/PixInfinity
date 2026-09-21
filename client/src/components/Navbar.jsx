@@ -11,7 +11,6 @@ import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const { isSignedIn, user } = useUser();
-
   const { credit, loadCreditsData } = useContext(AppContext);
 
   const navigate = useNavigate();
@@ -21,6 +20,15 @@ const Navbar = () => {
       loadCreditsData();
     }
   }, [isSignedIn]);
+
+  const tools = [
+    "Remove Background",
+    "Image Upscaling",
+    "Text to Image",
+    "Remove Text",
+    "CleanUp",
+    "UnCrop",
+  ];
 
   return (
     <nav className="h-[70px] px-5 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between">
@@ -38,14 +46,97 @@ const Navbar = () => {
       {/* ================= DESKTOP MENU ================= */}
       <div className="hidden md:flex items-center gap-8 text-[11px] font-semibold text-gray-700 uppercase">
 
-        <a
-          href="#tools"
-          className="flex items-center gap-1 hover:text-black transition-colors duration-200"
-        >
-          Tools
-          <i className="ri-arrow-down-s-line text-sm"></i>
-        </a>
+        {/* ================= TOOLS DROPDOWN ================= */}
+        <div className="relative group">
 
+          <button
+            className="
+              flex
+              items-center
+              gap-1
+              hover:text-black
+              transition-colors
+              duration-200
+              py-5
+            "
+          >
+            Tools
+
+            <i
+              className="
+                ri-arrow-down-s-line
+                text-sm
+                transition-transform
+                duration-300
+                group-hover:rotate-180
+              "
+            ></i>
+          </button>
+
+
+          {/* ================= DROPDOWN ================= */}
+          <div
+            className="
+              absolute
+              top-[58px]
+              left-1/2
+              -translate-x-1/2
+              w-[230px]
+              bg-white
+              border
+              border-black
+              rounded-[12px]
+              p-2
+              shadow-[4px_4px_0px_#000]
+              opacity-0
+              invisible
+              translate-y-2
+              group-hover:opacity-100
+              group-hover:visible
+              group-hover:translate-y-0
+              transition-all
+              duration-200
+              z-50
+            "
+          >
+
+            {tools.map((tool, index) => (
+              <div
+                key={tool}
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  px-3
+                  py-3
+                  rounded-md
+                  text-[10px]
+                  font-semibold
+                  text-gray-700
+                  hover:bg-black
+                  hover:text-white
+                  transition-all
+                  duration-200
+                  cursor-pointer
+                "
+              >
+
+                <span className="text-[9px] text-gray-400 group-hover:text-gray-300">
+                  0{index + 1}
+                </span>
+
+                <span>
+                  {tool}
+                </span>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+
+        {/* ================= OTHER LINKS ================= */}
         <a
           href="#features"
           className="hover:text-black transition-colors duration-200"

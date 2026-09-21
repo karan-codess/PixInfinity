@@ -4,16 +4,28 @@ import video from "../assets/video.webm";
 const Video = () => {
   return (
     <div className="flex items-center justify-center pb-16">
-      <div className="flex items-center w-[90%] mx-auto border-0 rounded-xl overflow-hidden">
+      <div
+        className="
+          flex items-center
+          w-[90%]
+          mx-auto
+          bg-[#f7f7f5]
+          border
+          border-black
+          rounded-[20px]
+          p-2
+          overflow-hidden
+        "
+      >
         <video
-          className="w-full h-auto"
+          className="w-full h-auto rounded-[14px] block"
           autoPlay
           loop
           muted
           playsInline
           controls={false}
         >
-          <source src={video} type="video/mp4" />
+          <source src={video} type="video/webm" />
         </video>
       </div>
     </div>

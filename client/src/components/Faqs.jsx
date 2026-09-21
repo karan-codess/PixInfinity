@@ -4,7 +4,7 @@ const faqs = [
   {
     question: "How does the credit system work?",
     answer:
-      "Revoo uses a simple credit system. AI editing tasks such as background removal, upscaling, object removal, and other AI tools use credits. You can purchase credits and use them whenever you need.",
+      "Pix uses a simple credit system. AI editing tasks such as background removal, upscaling, object removal, and other AI tools use credits. You can purchase credits and use them whenever you need.",
   },
   {
     question: "Do my credits expire?",
@@ -12,24 +12,24 @@ const faqs = [
       "No. Your purchased credits never expire. You can use them anytime whenever you need image editing.",
   },
   {
-    question: "Is Revoo beginner-friendly?",
+    question: "Is Pix beginner-friendly?",
     answer:
-      "Yes. Revoo is designed for everyone — from beginners to professional creators. You don't need any advanced design or editing experience.",
+      "Yes. Pix is designed for everyone — from beginners to professional creators. You don't need any advanced design or editing experience.",
   },
   {
-    question: "What image editing tools does Revoo offer?",
+    question: "What image editing tools does Pix offer?",
     answer:
-      "Revoo provides AI-powered tools such as background removal, image upscaling, text-to-image generation, text removal, object cleanup, and image uncropping.",
+      "Pix provides AI-powered tools such as background removal, image upscaling, text-to-image generation, text removal, object cleanup, and image uncropping.",
   },
   {
     question: "Is my data safe?",
     answer:
-      "Yes. Revoo is designed with privacy in mind. Your uploaded images are processed securely and handled according to the platform's data and privacy practices.",
+      "Yes. Pix is designed with privacy in mind. Your uploaded images are processed securely and handled according to the platform's data and privacy practices.",
   },
   {
-    question: "Can I use Revoo for professional projects?",
+    question: "Can I use Pix for professional projects?",
     answer:
-      "Absolutely. Revoo can be used for social media content, product images, marketing creatives, photography, design work, and other professional image editing needs.",
+      "Absolutely. Pix can be used for social media content, product images, marketing creatives, photography, design work, and other professional image editing needs.",
   },
 ];
 
@@ -80,7 +80,7 @@ const Faqs = () => {
         </h2>
 
         <p className="text-gray-600 mt-5 text-sm md:text-base leading-6">
-          Everything you need to know about Revoo and its AI-powered
+          Everything you need to know about Pix and its AI-powered
           image editing tools.
         </p>
       </div>

@@ -68,7 +68,7 @@ const Features = () => {
             "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
         }}
       >
-        Features of Revoo
+        Features of Pix Infinity
       </h1>
 
       {/* Paragraph */}
